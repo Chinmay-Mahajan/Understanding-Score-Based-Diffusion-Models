@@ -23,13 +23,13 @@ We can't calculate this because we would need Z (normalising factor) , for that 
 
 Instead of learning the energy function , we learn the gradient of the log probability
 <br>
-$$
+```math
 \nabla \log(p(x)) = \nabla(-E(x) - \log(z)) = \nabla(-E(x))
-$$
+```
 
 Z is a constant and hence we dont need to worry about that. If we learn $\nabla \log(p(x))$ that means we learn $\nabla (-E(x))$ with that we can take a random point in the input space and iteratively move it to a lower energy level and hence a higher probabily region. <br>
 
-This ***$\nabla \log(p(x))$*** is called the **score**. 
+This **$\nabla \log(p(x))$** is called the **score**. 
 
 
 ## Training Score Matching Models 
@@ -38,9 +38,10 @@ This ***$\nabla \log(p(x))$*** is called the **score**.
 ### Training Objective 
 
 From the name it's pretty clear what our objective would be 
-$$
+
+```math
 \mathbb{E}_{p(x)} \left[ \| s_\theta(x) - \nabla_x \log p(x) \|^2 \right]
-$$
+```
 
 However we can't use this because we dont know p(x) (probability distribution of the data)
 
